@@ -1,6 +1,7 @@
 package ru.job4j.condition;
 
 
+import org.hamcrest.number.IsCloseTo;
 import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -20,7 +21,7 @@ public class PointTest {
         Point point = new Point(1, 1);
         Point point2 = new Point(2, 2);
         double result = point.distanceTo(point2);
-        double expected = 1.4142135623730951;
-        assertThat(result, is(expected));
+        double expected = 1.4;
+        assertThat(result, IsCloseTo.closeTo(expected, 0.05));
     }
 }
