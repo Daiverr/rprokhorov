@@ -22,6 +22,6 @@ public class PointTest {
         Point point2 = new Point(2, 2);
         double result = point.distanceTo(point2);
         double expected = 1.4;
-        assertThat(result, IsCloseTo.closeTo(expected, 0.05));
+        assertThat(result, IsCloseTo.closeTo(expected, 0.04));
     }
 }
