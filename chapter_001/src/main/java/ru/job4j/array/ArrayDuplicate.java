@@ -12,15 +12,16 @@ public class ArrayDuplicate {
     public String[] remove(String[] array) {
        int a = 0;
        for (int i = 0; i < array.length; i++) {
-           for (int j = 0; j < array.length; j++) {
-               if (array[i].equals(array[j]) & i != j & !array[j].equals("0")) {
-                   array[j] = "0";
+           for (int j = i; j < array.length; j++) {
+               if (array[i].equals(array[j]) & j != i) {
+                   String buffer = array[j];
+                   array[j] = array[array.length - 1 - a];
+                   array[array.length - 1 - a] = buffer;
                    a++;
+                   break;
                }
            }
        }
-       Arrays.sort(array);
-       array = Arrays.copyOfRange(array, a, array.length);
-       return array;
+       return Arrays.copyOf(array, (array.length  -   a));
     }
 }
