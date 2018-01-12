@@ -9,18 +9,21 @@ import java.util.Arrays;
  */
 public class WordInWord {
     boolean contains(String origin, String sub) {
-        boolean rslt = false;
         char[] a = origin.toCharArray();
         char[] b = sub.toCharArray();
+        int c = 0;
         for (int i = 0; i < a.length; i++) {
             if (a[i] == b[0]) {
-                char[] c = Arrays.copyOfRange(a, i, i + b.length);
-                if (Arrays.equals(c, b)) {
-                    rslt = true;
-                    break;
+                for (int j = 0; j < b.length; j++) {
+                    if (b[j] == a[i + j]) {
+                        c++;
+                    }
+                    else {
+                        c = 0;
+                    }
                 }
             }
         }
-        return rslt;
+        return c == b.length;
     }
 }
