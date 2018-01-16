@@ -36,7 +36,7 @@ class Teacher extends Profession {
 
 class Engineer extends Profession {
     String company;
-    public Project design (Data data){
+    public Project design(Data data) {
         Project project = (Project) data;
         project.cost = 1000;
         return project;
@@ -47,6 +47,6 @@ class Data {
     String info;
 }
 
-class Project extends Data{
+class Project extends Data {
     int cost;
 }
