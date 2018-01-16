@@ -17,8 +17,7 @@ public class WordInWord {
                 for (int j = 0; j < b.length; j++) {
                     if (b[j] == a[i + j]) {
                         c++;
-                    }
-                    else {
+                    } else {
                         c = 0;
                     }
                 }
