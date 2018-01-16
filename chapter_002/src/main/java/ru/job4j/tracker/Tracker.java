@@ -32,7 +32,7 @@ public class Tracker {
     public void delete(String id) {
         for (int i = 0; i < this.items.length; i++) {
             if (this.items[i] != null && id.equals(items[i].getId())) {
-                System.arraycopy(this.items, i + 1 , this.items, i, this.items.length  - (i + 1));
+                System.arraycopy(this.items, i + 1, this.items, i, this.items.length  - (i + 1));
                 position--;
             }
         }
