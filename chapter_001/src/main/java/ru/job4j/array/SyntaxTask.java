@@ -9,19 +9,21 @@ import java.util.Arrays;
 public class SyntaxTask {
    public int[] combine(int[] a, int[] b) {
        int[] c = new int[a.length + b.length];
-       int v = 0;
-       System.arraycopy(a, 0, c, 0, a.length);
-       for(int i = 0; ; i++) {
-           if(b[i] < c[i]) {
-
+       int x = 0;
+       int y = 0;
+       for(int i=0;i<c.length;i++) {
+           if (x==a.length ) {
+               System.arraycopy(b, y, c, i, b.length-y);
+               break;
+           } else if (y==b.length ) {
+               System.arraycopy(a, x, c, i, a.length - x);
+               break;
+           } else if(a[x] < b[y]) {
+               c[i] = a[x++];
+           } else {
+               c[i] = b[y++];
            }
        }
        return c;
-    }
-    public static void main(String[] args) {
-       int[] n = new SyntaxTask().combine(new int[]{1,2,3,4,5}, new int[]{3,5,9,11});
-       for(int i: n) {
-           System.out.println(i);
-       }
-    }
+   }
 }
