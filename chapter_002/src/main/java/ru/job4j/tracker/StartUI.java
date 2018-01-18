@@ -45,7 +45,6 @@ public class StartUI {
             this.showMenu();
             String answer = this.input.ask("Введите пункт меню : ");
             if (ADD.equals(answer)) {
-                //добавление заявки вынесено в отдельный метод.
                 this.createItem();
             } else if (GETALL.equals(answer)) {
                 this.getAll();
@@ -121,8 +120,6 @@ public class StartUI {
         System.out.println("4. Поиск по ID");
         System.out.println("5. Поиск по имени");
         System.out.println("6. Выход из программы");
-
-        // добавить остальные пункты меню.
     }
 
     /**
