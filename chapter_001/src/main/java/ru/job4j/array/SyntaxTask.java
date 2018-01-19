@@ -11,14 +11,14 @@ public class SyntaxTask {
        int[] c = new int[a.length + b.length];
        int x = 0;
        int y = 0;
-       for(int i=0;i<c.length;i++) {
-           if (x==a.length ) {
-               System.arraycopy(b, y, c, i, b.length-y);
+       for (int i = 0; i < c.length; i++) {
+           if (x == a.length) {
+               System.arraycopy(b, y, c, i, b.length - y);
                break;
-           } else if (y==b.length ) {
+           } else if (y == b.length) {
                System.arraycopy(a, x, c, i, a.length - x);
                break;
-           } else if(a[x] < b[y]) {
+           } else if (a[x] < b[y]) {
                c[i] = a[x++];
            } else {
                c[i] = b[y++];
