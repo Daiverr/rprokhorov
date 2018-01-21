@@ -13,11 +13,9 @@ public class SyntaxTask {
        int y = 0;
        for (int i = 0; i < c.length; i++) {
            if (x == a.length) {
-               System.arraycopy(b, y, c, i, b.length - y);
-               break;
+               c[i] = b[y++];
            } else if (y == b.length) {
-               System.arraycopy(a, x, c, i, a.length - x);
-               break;
+               c[i] = a[x++];
            } else if (a[x] < b[y]) {
                c[i] = a[x++];
            } else {
