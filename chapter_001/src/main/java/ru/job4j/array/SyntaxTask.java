@@ -1,5 +1,4 @@
 package ru.job4j.array;
-import java.util.Arrays;
 /**
  * @author Roman Prokhorov (daiverr1@gmail.com)
  * @version $Id$
