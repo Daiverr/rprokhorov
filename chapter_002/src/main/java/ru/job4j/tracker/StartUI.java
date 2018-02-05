@@ -39,8 +39,7 @@ public class StartUI {
         menu.fillActions();
         do {
             menu.showMenu();
-            int answer = Integer.valueOf(this.input.ask("Введите пункт меню : "));
-            menu.select(answer);
+            menu.select(this.input.ask("Введите пункт меню : ", menu.ranges));
         } while (!"Да".equals(this.input.ask("Выйти? <Да>")));
     }
     /**
@@ -48,7 +47,7 @@ public class StartUI {
      * @param args
      */
     public static void main(String[] args) {
-        new StartUI(new ConsoleInput(), new Tracker()).init();
+        new StartUI(new ValidateInput(), new Tracker()).init();
     }
 }
 

@@ -7,6 +7,7 @@ public class MenuTracker {
     private Input input;
     private Tracker tracker;
     private UserAction[] actions = new UserAction[6];
+    protected int[] ranges;
 
 
     public MenuTracker(Input input, Tracker tracker) {
@@ -21,14 +22,15 @@ public class MenuTracker {
         this.actions[3] = new DeleteItem();
         this.actions[4] = new FindById();
         this.actions[5] = new FindByName();
+        ranges = new int[actions.length];
+        for (int i=0; i<actions.length; i++) {
+            ranges[i] = i;
+        }
     }
 
     public void select(int key) {
-        if (key >= 0 && key <= 5) {
-            this.actions[key].execute(this.input, this.tracker);
-        } else {
-            System.out.println("Неверно. Укажите значение от 0 до 6");
-        }
+        this.actions[key].execute(this.input, this.tracker);
+
     }
 
     public void showMenu() {
