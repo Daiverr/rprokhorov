@@ -35,6 +35,18 @@ public class StubInput implements Input {
     }
 
     public int ask(String question, int[] range) {
-        return 0;
+        int key = Integer.valueOf(this.ask(question));
+        boolean exist = false;
+        for (int value: range) {
+            if (value == key) {
+                exist = true;
+                break;
+            }
+        }
+        if (exist) {
+            return key;
+        } else {
+            throw new MenuOutException("Неверно. Укажите значение от 0 до 6");
+        }
     }
 }

@@ -23,7 +23,7 @@ public class MenuTracker {
         this.actions[4] = new FindById();
         this.actions[5] = new FindByName();
         ranges = new int[actions.length];
-        for (int i=0; i<actions.length; i++) {
+        for (int i = 0; i < actions.length; i++) {
             ranges[i] = i;
         }
     }
