@@ -14,4 +14,13 @@ public class PriorityQueueTest {
         Task result = queue.take();
         assertThat(result.getDesc(), is("urgent"));
     }
+
+    @Test
+    public void whenLowerPriority() {
+        PriorityQueue queue = new PriorityQueue();
+        queue.put(new Task("low", 2));
+        queue.put(new Task("urgent", 5));
+        Task result = queue.take();
+        assertThat(result.getDesc(), is("low"));
+    }
 }
