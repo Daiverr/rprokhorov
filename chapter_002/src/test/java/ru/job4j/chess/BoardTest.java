@@ -15,7 +15,7 @@ public class BoardTest {
         Figure bishop2 = new Bishop(new Cell(0, 0));
         board.add(bishop);
         board.add(bishop2);
-        result = board.move(new Cell(2,0), new Cell(5, 3));
+        result = board.move(new Cell(2,0), new Cell(1, 1));
         assertThat(result, is(true));
     }
 
@@ -32,5 +32,17 @@ public class BoardTest {
         assertThat(bishop.position.x, is(5));
         assertThat(bishop.position.y, is(3));
 
+    }
+
+    @Test
+    public void whenMoveFigure3MoveDown() throws FigureNotFoundException, ImpossibleMoveException, OccupiedWayException {
+        boolean result = false;
+        Board board = new Board();
+        Figure bishop = new Bishop(new Cell(6, 4));
+        Figure bishop2 = new Bishop(new Cell(0, 0));
+        board.add(bishop);
+        board.add(bishop2);
+        result = board.move(new Cell(6, 4), new Cell(7, 3));
+        assertThat(result, is(true));
     }
 }
