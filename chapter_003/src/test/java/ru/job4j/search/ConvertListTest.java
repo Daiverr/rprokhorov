@@ -1,5 +1,6 @@
 package ru.job4j.search;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -27,5 +28,19 @@ public class ConvertListTest {
         int[][] result = convert.toArray(list, 3);
               //  {{1, 2, 3}, {4, 5, 6}, {7, 0 ,0}}
         assertThat(result[2][2], is(0));
+    }
+
+    @Test
+    public void convert() {
+        ConvertList conver = new ConvertList();
+        List<int[]> list = new ArrayList<>();
+        list.add(new int[]{1, 2});
+        list.add(new int[]{3, 4, 5, 6});
+        List<Integer> result = conver.convert(list);
+        List<Integer> exp = new ArrayList<>();
+        for (int i = 1; i < 7; i++) {
+            exp.add(i);
+        }
+        assertThat(result, is(exp));
     }
 }

@@ -1,8 +1,7 @@
 package ru.job4j.search;
 
-import com.sun.xml.internal.bind.v2.runtime.reflect.Lister;
-
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
@@ -38,6 +37,16 @@ public class ConvertList {
             }
         }
 
+        return result;
+    }
+
+    public List<Integer> convert (List<int[]> list) {
+        List<Integer> result = new ArrayList<>();
+        for (int[] ms: list) {
+            for (int nm: ms) {
+                result.add(nm);
+            }
+        }
         return result;
     }
 }
