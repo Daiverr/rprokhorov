@@ -38,9 +38,12 @@ public class ConvertListTest {
         list.add(new int[]{3, 4, 5, 6});
         List<Integer> result = conver.convert(list);
         List<Integer> exp = new ArrayList<>();
-        for (int i = 1; i < 7; i++) {
-            exp.add(i);
-        }
+        exp.add(1);
+        exp.add(2);
+        exp.add(3);
+        exp.add(4);
+        exp.add(5);
+        exp.add(6);
         assertThat(result, is(exp));
     }
 }

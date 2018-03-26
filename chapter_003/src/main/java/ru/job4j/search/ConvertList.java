@@ -42,9 +42,9 @@ public class ConvertList {
 
     public List<Integer> convert (List<int[]> list) {
         List<Integer> result = new ArrayList<>();
-        for (int[] ms: list) {
-            for (int nm: ms) {
-                result.add(nm);
+        for (int[] array: list) {
+            for (int element: array) {
+                result.add(element);
             }
         }
         return result;
