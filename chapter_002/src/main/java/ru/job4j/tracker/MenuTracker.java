@@ -1,13 +1,14 @@
 package ru.job4j.tracker;
 
 
+import java.util.ArrayList;
 
 public class MenuTracker {
 
     private Input input;
     private Tracker tracker;
-    private UserAction[] actions = new UserAction[6];
-    protected int[] ranges;
+    private ArrayList<UserAction> actions = new ArrayList<>();
+    protected ArrayList<Integer> ranges = new ArrayList<>();
     private int position = 0;
 
 
@@ -17,24 +18,25 @@ public class MenuTracker {
     }
 
     public void fillActions() {
-        this.actions[position++] = this.new AddItem(0, "Создать заявку");
-        this.actions[position++] = new MenuTracker.GetAll(1, "Показать все заявки");
-        this.actions[position++] = new EditItem(2, "Редактировать заявку");
-        this.actions[position++] = new DeleteItem(3, "Удалить заявку");
-        this.actions[position++] = new FindById(4, "Поиск по ID");
-        this.actions[position++] = new FindByName(5, "Поиск по имени");
-        ranges = new int[actions.length];
-        for (int i = 0; i < actions.length; i++) {
-            ranges[i] = i;
+        this.actions.add(this.new AddItem(0, "Создать заявку")); position++;
+        this.actions.add(new MenuTracker.GetAll(1, "Показать все заявки"));position++;
+        this.actions.add(new EditItem(2, "Редактировать заявку"));position++;
+        this.actions.add(new DeleteItem(3, "Удалить заявку"));position++;
+        this.actions.add(new FindById(4, "Поиск по ID"));position++;
+        this.actions.add(new FindByName(5, "Поиск по имени"));position++;
+
+        for (int i = 0; i < actions.size(); i++) {
+            ranges.add(i);
         }
     }
 
     public void addAction(UserAction action) {
-        this.actions[position++] = action;
+        this.actions.add(action);
+        position++;
     }
 
     public void select(int key) {
-        this.actions[key].execute(this.input, this.tracker);
+        this.actions.get(key).execute(this.input, this.tracker);
 
     }
 
