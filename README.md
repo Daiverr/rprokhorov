@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/Daiverr/rprokhorov.svg?branch=master)](https://travis-ci.org/Daiverr/rprokhorov)
+[![codecov](https://codecov.io/gh/Daiverr/rprokhorov/branch/master/graph/badge.svg)](https://codecov.io/gh/Daiverr/rprokhorov)
+
 # Репозиторий Прохорова Романа.
 Прохожу обучение Java. <br />
 Далее будут реализованные проекты.<br />
