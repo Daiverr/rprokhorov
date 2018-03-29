@@ -27,7 +27,7 @@ public class Board {
                 figureFound = figure;
                 move = true;
                 figure = figure.copy(dest);
-            } else if (move == false) {
+            } else if (!move) {
                 number++;
                 if (number == numb) {
                     throw new FigureNotFoundException();

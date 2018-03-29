@@ -15,7 +15,7 @@ public class BoardTest {
         Figure bishop2 = new Bishop(new Cell(0, 0));
         board.add(bishop);
         board.add(bishop2);
-        result = board.move(new Cell(2,0), new Cell(1, 1));
+        result = board.move(new Cell(2, 0), new Cell(1, 1));
         assertThat(result, is(true));
     }
 

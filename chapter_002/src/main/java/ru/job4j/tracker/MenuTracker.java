@@ -19,11 +19,11 @@ public class MenuTracker {
 
     public void fillActions() {
         this.actions.add(this.new AddItem(0, "Создать заявку")); position++;
-        this.actions.add(new MenuTracker.GetAll(1, "Показать все заявки"));position++;
-        this.actions.add(new EditItem(2, "Редактировать заявку"));position++;
-        this.actions.add(new DeleteItem(3, "Удалить заявку"));position++;
-        this.actions.add(new FindById(4, "Поиск по ID"));position++;
-        this.actions.add(new FindByName(5, "Поиск по имени"));position++;
+        this.actions.add(new MenuTracker.GetAll(1, "Показать все заявки")); position++;
+        this.actions.add(new EditItem(2, "Редактировать заявку")); position++;
+        this.actions.add(new DeleteItem(3, "Удалить заявку")); position++;
+        this.actions.add(new FindById(4, "Поиск по ID")); position++;
+        this.actions.add(new FindByName(5, "Поиск по имени")); position++;
 
         for (int i = 0; i < actions.size(); i++) {
             ranges.add(i);

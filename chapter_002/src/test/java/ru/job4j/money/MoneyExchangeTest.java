@@ -8,7 +8,7 @@ import ru.job4j.coffee.MoneyExchange;
 public class MoneyExchangeTest {
 
     @Test
-    public void CoffeeFor35() {
+    public void coffeeFor35() {
         MoneyExchange moneyExchange = new MoneyExchange();
         int[] result = moneyExchange.changes(50, 35);
         int[] exp = {10, 5};
@@ -16,7 +16,7 @@ public class MoneyExchangeTest {
     }
 
     @Test
-    public void CoffeeFor19() {
+    public void coffeeFor19() {
         MoneyExchange moneyExchange = new MoneyExchange();
         int[] result = moneyExchange.changes(50, 19);
         int[] exp = {10, 10, 10, 1};
