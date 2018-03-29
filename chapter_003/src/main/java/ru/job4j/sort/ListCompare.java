@@ -3,7 +3,7 @@ package ru.job4j.sort;
 import java.util.Comparator;
 import java.lang.Character;
 
-public class ListCompare implements Comparator<String>{
+public class ListCompare implements Comparator<String> {
     @Override
     public int compare(String o1, String o2) {
         int result = 0;
@@ -13,7 +13,7 @@ public class ListCompare implements Comparator<String>{
             buffer = o2;
         }
         for (int i = 0; i < buffer.length(); i++) {
-           if (Character.compare(o1.charAt(i), o2.charAt(i)) > 1) {
+           if (Character.compare(o1.charAt(i), o2.charAt(i)) > 0) {
                result = 1;
                break;
            } else if (Character.compare(o1.charAt(i), o2.charAt(i)) < 0) {

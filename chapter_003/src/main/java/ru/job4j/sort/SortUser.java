@@ -4,13 +4,13 @@ import java.util.*;
 
 public class SortUser {
 
-    public Set<User> sort (List<User> in) {
-        Set<User> result= new TreeSet<>();
+    public Set<User> sort(List<User> in) {
+        Set<User> result = new TreeSet<>();
         result.addAll(in);
         return result;
     }
 
-    public List<User> sortNameLength (List<User> in) {
+    public List<User> sortNameLength(List<User> in) {
         //необходимо определить Comparator для метода Collections.sort и отсортировать List<User> по длине имени.
         List<User> result = new ArrayList<User>();
         result.addAll(in);
@@ -18,11 +18,11 @@ public class SortUser {
         return result;
     }
 
-    public List<User> sortByAllFields (List<User> in) {
+    public List<User> sortByAllFields(List<User> in) {
        // отсортировать List<User> по обоим полям, сначала сортировка по имени в лексикографическом порядке, потом по возрасту
         List<User> result = new ArrayList<User>();
         result.addAll(in);
-        Collections.sort(result, new UserComparatorAlhрabetThanAge());
+        Collections.sort(result, new UserComparatorAlphabetThanAge());
         return result;
     }
 }
@@ -36,14 +36,16 @@ class UserComparatorLength implements Comparator<User> {
     }
 }
 
-class UserComparatorAlhрabetThanAge implements Comparator<User> {
+class UserComparatorAlphabetThanAge implements Comparator<User> {
 
     @Override
     public int compare(User o1, User o2) {
         int result;
         if (o1.getName().compareTo(o2.getName()) == 0) {
             result = Integer.compare(o1.getAge(), o2.getAge());
-        } else result = o1.getName().compareTo(o2.getName());
+        } else {
+            result = o1.getName().compareTo(o2.getName());
+        }
         return result;
     }
 }

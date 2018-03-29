@@ -12,7 +12,7 @@ import java.util.List;
  */
 
 public class ConvertList {
-    public List<Integer> toList (int[][] array) {
+    public List<Integer> toList(int[][] array) {
         List<Integer> result = new ArrayList<>();
         for (int i = 0; i < array.length; i++) {
             for (int k = 0; k < array[i].length; k++) {
@@ -22,8 +22,8 @@ public class ConvertList {
         return result;
     }
 
-    public int[][] toArray (List<Integer> list, int rows) {
-        int column = list.size()/rows;
+    public int[][] toArray(List<Integer> list, int rows) {
+        int column = list.size() / rows;
         if (list.size() % rows != 0) {
             column++;
         }
@@ -33,14 +33,16 @@ public class ConvertList {
             for (int k = 0; k < column; k++) {
                 if (iterator.hasNext()) {
                     result[i][k] = iterator.next();
-                } else result[i][k] = 0;
+                } else {
+                    result[i][k] = 0;
+                }
             }
         }
 
         return result;
     }
 
-    public List<Integer> convert (List<int[]> list) {
+    public List<Integer> convert(List<int[]> list) {
         List<Integer> result = new ArrayList<>();
         for (int[] array: list) {
             for (int element: array) {

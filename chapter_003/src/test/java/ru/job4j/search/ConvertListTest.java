@@ -14,7 +14,7 @@ public class ConvertListTest {
     @Test
     public void convertToList() {
         ConvertList convert = new ConvertList();
-        List<Integer> result = convert.toList(new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 0 ,0}});
+        List<Integer> result = convert.toList(new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 0, 0}});
         assertThat(result.get(3), is(4));
     }
 
